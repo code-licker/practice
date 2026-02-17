@@ -1,0 +1,18 @@
+<button (click)="changeShowDogs()">show dog names</button>
+<br>
+@if(showDogs()) {
+  <div>
+    <code>
+      yoo
+      <br>
+      @for(dg of dogNames(); track dg) {
+        {{dg}} <br>
+      }
+    </code>
+  </div>
+  <div>
+    <button (click)="prevPage()" [disabled]="currPage()<=1" >prev page</button>
+    <button (click)="nextPage()">next page</button>
+  </div>
+}
+<router-outlet />
