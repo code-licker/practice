@@ -1,7 +1,7 @@
 import { computed, inject, Injectable } from "@angular/core";
 import { DataService } from "../shared";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class DataModService {
     private readonly dataService = inject(DataService);
     public dogSignal = computed(() => this.dataService.dogData());

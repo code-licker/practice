@@ -6,7 +6,7 @@ export interface ApiResponseDto {
     [key: string]: any;
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class DataService {
     private readonly http = inject(HttpClient);
     public dogData = signal<ApiResponseDto[]>([]);
