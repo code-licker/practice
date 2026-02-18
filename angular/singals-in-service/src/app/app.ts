@@ -10,14 +10,14 @@ import { take, tap } from 'rxjs';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App implements OnInit {
+export class App {
   private readonly dataService = inject(DataService);
   private readonly dataModService = inject(DataModService);
   public showDogs = signal(false);
   public currPage = signal(1);
   public dogNames = computed(() => this.dataModService.getDogNames());
 
-  public ngOnInit(): void {
+  public getDogsFromApi(): void {
     this.getDogs();
   }
 

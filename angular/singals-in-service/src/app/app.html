@@ -1,5 +1,7 @@
 <button (click)="changeShowDogs()">show dog names</button>
-<br>
+<div>
+  <button (click)="getDogsFromApi()">call dogs api</button>
+</div>
 @if(showDogs()) {
   <div>
     <code>
